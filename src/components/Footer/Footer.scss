@@ -1,4 +1,4 @@
-.Footer{
+.Footer {
     box-sizing: border-box;
     width: 100vw;
     padding: 0 100px;
@@ -6,11 +6,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: blue;
-    &-copyright{
-        color:#fff
+    background-color: #FF0000;
+
+    &-copyright {
+        color: #fff
     }
-    &-logo{
+
+    &-logo {
         font-size: 30px;
         font-weight: bold;
         color: #fff;

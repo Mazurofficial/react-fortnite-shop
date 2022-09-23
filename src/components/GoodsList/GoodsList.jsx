@@ -3,7 +3,7 @@ import Good from './Good/Good';
 import './GoodsList.scss';
 
 export default function GoodsList(props) {
-   const { goods = [] } = props;
+   const { goods = [], addProductToOrder = Function.prototype } = props;
 
    if (!goods.length) {
       return (
@@ -15,7 +15,11 @@ export default function GoodsList(props) {
       return (
          <div className="GoodsList">
             {goods.map((item) => (
-               <Good key={item.id} {...item} />
+               <Good
+                  key={item.id}
+                  {...item}
+                  addProductToOrder={addProductToOrder}
+               />
             ))}
          </div>
       );

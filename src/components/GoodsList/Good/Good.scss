@@ -1,22 +1,80 @@
-.Good{
+.Good {
     display: flex;
     flex-direction: column;
-    background-color: cornflowerblue;
-    &-poster{
-        height: 430px;
-        width: 295px;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    border: 3px solid #000000;
+
+    &-content {
+        img {
+            width: 295px;
+            margin-top: -3px;
+            margin-left: -3px;
+            margin-right: -3px;
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+
+            h3 {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 29px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-family: 'Inter';
+                font-style: italic;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                max-height: 57px;
+            }
+        }
+
     }
-    &-content{
-        padding: 15px;
-        h3,p,h4{
+
+    &-buy {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border-top: 3px solid #000;
+
+        h4 {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+
+            color: #FF0000;
+
+        }
+
+        button {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            padding: 10px 6px;
+            border: none;
+            cursor: pointer;
+
             color: #fff;
-            margin: 0;
+            background: #FF0000;
+            transition: ease-in-out .3s;
         }
-        p{
-            font-style: italic;
-        }
-        h3{
-            margin: 10px 0;
+
+        button:hover {
+            background: #640000;
         }
     }
 }

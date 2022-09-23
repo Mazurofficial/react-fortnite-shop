@@ -1,0 +1,16 @@
+.Cart {
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    box-shadow: 0px 5px 10px rgba(100, 0, 0, 0.6);
+
+    background-color: red;
+    color: #fff;
+}
