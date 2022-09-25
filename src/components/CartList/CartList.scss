@@ -1,0 +1,41 @@
+.CartList {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    border-right: 3px solid #000;
+    border-left: 3px solid #000;
+
+    background-color: #fff;
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        list-style: none;
+        width: 100%;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    &-heading {
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: red;
+        color: #fff;
+        border-top: 3px solid #000;
+        border-bottom: 3px solid #000;
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 2px solid red;
+    }
+}

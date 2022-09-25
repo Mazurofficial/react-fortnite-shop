@@ -3,31 +3,13 @@ import { API_KEY, API_URL } from '../../config';
 import Cart from '../Cart/Cart';
 import GoodsList from '../GoodsList/GoodsList';
 import './Shop.scss';
+import CartList from '../CartList/CartList';
 
 export default function Shop() {
    const [goods, setGoods] = useState([]);
    const [loading, setLoading] = useState(true);
    const [order, setOrder] = useState([]);
-
-   // getGoods from API
-   useEffect(() => {
-      fetch(API_URL, {
-         headers: {
-            Authorization: API_KEY,
-         },
-      })
-         .then((response) => response.json())
-         .then((data) => {
-            data.featured && setGoods(data.featured);
-            setLoading(false);
-         });
-   }, []);
-
-   // const buyProduct = (productId) => {
-   //    if (!order.includes(productId)) {
-   //       setOrder([...order, productId]);
-   //    }
-   // };
+   const [isCartShow, setCartShow] = useState(false);
 
    const addProductToOrder = (product) => {
       const productIndex = order.findIndex(
@@ -59,9 +41,32 @@ export default function Shop() {
       console.log(productIndex);
    };
 
+   const handleCartShow = () => setCartShow(!isCartShow);
+
+   // getGoods from API
+   useEffect(() => {
+      fetch(API_URL, {
+         headers: {
+            Authorization: API_KEY,
+         },
+      })
+         .then((response) => response.json())
+         .then((data) => {
+            data.featured && setGoods(data.featured);
+            setLoading(false);
+         });
+   }, []);
+
    return (
       <div className="Shop">
-         <Cart quantity={order.length} />
+         <Cart
+            quantity={order.length}
+            handleCartShow={handleCartShow}
+            isCartShow={isCartShow}
+         />
+         {isCartShow && (
+            <CartList order={order} handleCartShow={handleCartShow} />
+         )}
          {loading ? (
             <div className="lds-facebook">
                <div></div>
