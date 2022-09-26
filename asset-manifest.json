@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "//mazurofficial.github.io/react-fortnite-shop/static/css/main.3e76d12b.css",
-    "main.js": "//mazurofficial.github.io/react-fortnite-shop/static/js/main.01a521d3.js",
+    "main.js": "//mazurofficial.github.io/react-fortnite-shop/static/js/main.7429c6bb.js",
     "index.html": "//mazurofficial.github.io/react-fortnite-shop/index.html",
     "main.3e76d12b.css.map": "//mazurofficial.github.io/react-fortnite-shop/static/css/main.3e76d12b.css.map",
-    "main.01a521d3.js.map": "//mazurofficial.github.io/react-fortnite-shop/static/js/main.01a521d3.js.map"
+    "main.7429c6bb.js.map": "//mazurofficial.github.io/react-fortnite-shop/static/js/main.7429c6bb.js.map"
   },
   "entrypoints": [
     "static/css/main.3e76d12b.css",
-    "static/js/main.01a521d3.js"
+    "static/js/main.7429c6bb.js"
   ]
 }
