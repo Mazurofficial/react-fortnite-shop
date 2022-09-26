@@ -1,14 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
+import { ShopContext } from '../../../context';
 
 export default function CartItem(props) {
-   const {
-      id,
-      name,
-      price,
-      quantity,
-      removeProductFromOrder = Function.prototype,
-      changeProductQuantity = Function.prototype,
-   } = props;
+   const { id, name, price, quantity } = props;
+
+   const { removeProductFromOrder, incProductQuantity, decProductQuantity } =
+      useContext(ShopContext);
    return (
       <li id={id} className="CartList-item">
          <p>
@@ -17,7 +15,7 @@ export default function CartItem(props) {
                className="material-icons"
                onClick={() => {
                   if (quantity > 1) {
-                     changeProductQuantity(id, 'REMOVE');
+                     decProductQuantity(id);
                   } else {
                      removeProductFromOrder(id);
                   }
@@ -28,7 +26,7 @@ export default function CartItem(props) {
             x{quantity}{' '}
             <i
                className="material-icons"
-               onClick={() => changeProductQuantity(id, 'ADD')}
+               onClick={() => incProductQuantity(id)}
             >
                add
             </i>{' '}

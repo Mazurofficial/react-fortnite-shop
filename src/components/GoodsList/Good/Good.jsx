@@ -1,9 +1,12 @@
 import React from 'react';
 import './Good.scss';
+import { ShopContext } from '../../../context';
+import { useContext } from 'react';
 
 export default function Good(props) {
-   const { id, name, description, price, full_background, addProductToOrder } =
-      props;
+   const { id, name, description, price, full_background } = props;
+
+   const { addProductToOrder } = useContext(ShopContext);
 
    return (
       <div className="Good" id={id}>

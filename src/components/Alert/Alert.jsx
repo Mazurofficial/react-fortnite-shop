@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import './Alert.scss';
+import { useContext } from 'react';
+import { ShopContext } from '../../context';
 
-export default function Alert(props) {
-   const { alertName = '', closeAlert = Function.prototype } = props;
+export default function Alert() {
+   const { alertName = '', closeAlert = Function.prototype } =
+      useContext(ShopContext);
 
    useEffect(() => {
       const timerId = setTimeout(closeAlert, 3000);

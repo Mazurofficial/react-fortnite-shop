@@ -1,12 +1,14 @@
 import React from 'react';
 import './Cart.scss';
+import { useContext } from 'react';
+import { ShopContext } from '../../context';
 
-export default function Cart(props) {
+export default function Cart() {
    const {
-      quantity = 0,
+      order,
       handleCartShow = Function.prototype,
       isCartShow,
-   } = props;
+   } = useContext(ShopContext);
    return (
       <div className="Cart" onClick={handleCartShow}>
          {isCartShow ? (
@@ -16,8 +18,8 @@ export default function Cart(props) {
          ) : (
             <>
                <i className="material-icons">shopping_cart</i>
-               {quantity ? (
-                  <span className="Cart-quantity">{quantity}</span>
+               {order.length ? (
+                  <span className="Cart-quantity">{order.length}</span>
                ) : null}
             </>
          )}
