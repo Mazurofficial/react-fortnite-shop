@@ -14,7 +14,16 @@
     background-color: red;
     color: #fff;
 
-    i {
-        cursor: pointer;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.Cart:hover {
+    transform: scale(.95);
+}
+
+@media screen and (max-width:500px) {
+    .Cart {
+        right: 10px;
     }
 }

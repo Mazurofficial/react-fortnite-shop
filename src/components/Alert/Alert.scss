@@ -1,0 +1,28 @@
+.Alert {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    border: 3px solid #000;
+
+    animation: opacityOnAndOff 3s normal forwards;
+
+}
+
+@keyframes opacityOnAndOff {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .Alert {
+        right: 10px;
+    }
+}

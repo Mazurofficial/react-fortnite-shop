@@ -3,7 +3,12 @@ import CartItem from './CartItem/CartItem';
 import './CartList.scss';
 
 export default function CartList(props) {
-   const { order = [], handleCartShow = Function.prototype } = props;
+   const {
+      order = [],
+      handleCartShow = Function.prototype,
+      removeProductFromOrder = Function.prototype,
+      changeProductQuantity = Function.prototype,
+   } = props;
 
    const totalPrice = order.reduce(
       (sum, orderItem) => sum + orderItem.price * orderItem.quantity,
@@ -19,14 +24,22 @@ export default function CartList(props) {
                   close
                </i>
             </li>
-
-            {order.length ? (
-               order.map((orderItem) => (
-                  <CartItem key={orderItem.id} {...orderItem} />
-               ))
-            ) : (
-               <li>CART IS EMPTY</li>
-            )}
+            <li>
+               <ul className="CartList-itemList">
+                  {order.length ? (
+                     order.map((orderItem) => (
+                        <CartItem
+                           key={orderItem.id}
+                           {...orderItem}
+                           removeProductFromOrder={removeProductFromOrder}
+                           changeProductQuantity={changeProductQuantity}
+                        />
+                     ))
+                  ) : (
+                     <li className="CartList-item">CART IS EMPTY</li>
+                  )}
+               </ul>
+            </li>
             <li className="CartList-heading">SUMMARY: {totalPrice}</li>
          </ul>
       </div>

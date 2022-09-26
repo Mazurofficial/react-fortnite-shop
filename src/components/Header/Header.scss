@@ -16,3 +16,10 @@
         text-decoration: none;
     }
 }
+
+@media screen and (max-width:500px) {
+    .Header {
+        padding: 0 10px;
+        justify-content: center;
+    }
+}
