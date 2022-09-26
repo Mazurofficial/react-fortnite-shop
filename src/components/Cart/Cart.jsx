@@ -12,9 +12,7 @@ export default function Cart() {
    return (
       <div className="Cart" onClick={handleCartShow}>
          {isCartShow ? (
-            <i className="material-icons" onClick={handleCartShow}>
-               close
-            </i>
+            <i className="material-icons">close</i>
          ) : (
             <>
                <i className="material-icons">shopping_cart</i>
