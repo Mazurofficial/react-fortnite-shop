@@ -8,8 +8,7 @@ import CartList from '../CartList/CartList';
 import Alert from '../Alert/Alert';
 
 export default function Shop() {
-   const { loading, order, isCartShow, alertName, setGoods } =
-      useContext(ShopContext);
+   const { loading, isCartShow, alertName, setGoods } = useContext(ShopContext);
 
    // getGoods from API
    useEffect(() => {
